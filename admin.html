@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Admin — HR Mastery Series (private)</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site" id="site-header"></header>
+
+<div class="admin-wrap">
+  <div class="admin-card" style="border-left:4px solid var(--gold);">
+    <h2>Mayur's Site Admin</h2>
+    <p style="font-size:.92rem;color:var(--muted);">This private page updates your website. Nothing changes until you download the updated file and upload it to GitHub (Step 3 below walks you through it). This page is not linked anywhere on the site — only people with the exact address can find it.</p>
+  </div>
+
+  <!-- ============ BOOKS ============ -->
+  <div class="admin-card">
+    <h2>1 &middot; Your Books</h2>
+    <p style="font-size:.9rem;color:var(--muted);margin-bottom:12px;">Click a book to edit it, or add a new one.</p>
+    <div class="book-select-list" id="book-list"></div>
+    <br>
+    <button class="btn btn-gold" onclick="newBook()">+ Add a new book</button>
+  </div>
+
+  <div class="admin-card" id="book-editor" style="display:none;">
+    <h2 id="editor-title">Edit Book</h2>
+
+    <label>Book name (title)</label>
+    <input type="text" id="f-title" placeholder="e.g., Pay With Purpose">
+
+    <label>Subtitle</label>
+    <input type="text" id="f-subtitle" placeholder="e.g., The Koikar Total Rewards Framework">
+
+    <label>Series line</label>
+    <input type="text" id="f-series" value="The HR Mastery Series">
+
+    <label>Status</label>
+    <select id="f-status">
+      <option value="coming-soon">Coming soon (no purchase links yet)</option>
+      <option value="available">Available now (show Buy buttons)</option>
+    </select>
+
+    <label>Book cover — image file name</label>
+    <input type="text" id="f-cover" placeholder="e.g., covers/my-new-book.jpg">
+    <p style="font-size:.8rem;color:var(--muted);margin-top:4px;">Upload the actual image file to the <b>covers</b> folder on GitHub (guide, Step 4), then type its name here, e.g. <i>covers/my-book.jpg</i>. Until then, a generated cover can be used.</p>
+
+    <label>Description (2–4 sentences shown on the book page)</label>
+    <textarea id="f-desc"></textarea>
+
+    <label>Highlights (one per line, 3 bullets recommended)</label>
+    <textarea id="f-highlights"></textarea>
+
+    <label>Purchase links — one per store (Amazon, Pothi, Flipkart, anywhere)</label>
+    <div id="f-links"></div>
+    <button class="btn btn-navy btn-sm" onclick="addLinkRow('','')">+ Add another store link</button>
+
+    <label>Sample chapter text (paste it — leave a blank line between paragraphs)</label>
+    <textarea id="f-sample" style="min-height:140px;" placeholder="Paste the sample chapter here. Leave empty to keep the existing sample."></textarea>
+
+    <label>Related free resources (tick any that belong with this book)</label>
+    <div id="f-resources" style="font-size:.92rem;"></div>
+
+    <br>
+    <button class="btn btn-gold" onclick="saveBook()">Save this book</button>
+    <button class="btn btn-sm" style="border:1.5px solid #b33;color:#b33;background:none;" onclick="deleteBook()">Remove book from site</button>
+    <span id="save-msg" style="color:#1e6b2e;font-weight:600;margin-left:10px;"></span>
+  </div>
+
+  <!-- ============ RESOURCES ============ -->
+  <div class="admin-card">
+    <h2>2 &middot; Free Resources</h2>
+    <div class="book-select-list" id="res-list-admin"></div>
+    <br>
+    <label>Resource title</label>
+    <input type="text" id="r-title" placeholder="e.g., Total Rewards Health-Check Template">
+    <label>Short description</label>
+    <textarea id="r-desc" style="min-height:60px;"></textarea>
+    <label>Type</label>
+    <input type="text" id="r-type" value="PDF download">
+    <label>File name or web link</label>
+    <input type="text" id="r-file" placeholder="e.g., resources/my-template.pdf  (upload the PDF to the resources folder on GitHub)">
+    <label>Related book (optional)</label>
+    <select id="r-book"><option value="">— none —</option></select>
+    <br><br>
+    <button class="btn btn-gold" onclick="addResource()">+ Add this resource</button>
+    <span id="res-msg" style="color:#1e6b2e;font-weight:600;margin-left:10px;"></span>
+  </div>
+
+  <!-- ============ DOWNLOAD ============ -->
+  <div class="admin-card" style="border-left:4px solid #1e6b2e;">
+    <h2>3 &middot; Publish Your Changes</h2>
+    <p style="font-size:.92rem;margin-bottom:14px;">When you have finished editing, click the button below. It downloads one file: <b>data.js</b>. Then:</p>
+    <ol class="steps">
+      <li>Go to your website's GitHub page and open the <b>data</b> folder.</li>
+      <li>Click <b>Add file &rarr; Upload files</b>, drop in the downloaded <b>data.js</b>, and click <b>Commit changes</b>.</li>
+      <li>Wait 1–2 minutes. Your live website updates automatically.</li>
+    </ol>
+    <p style="font-size:.85rem;color:var(--muted);margin-top:10px;">New cover images or PDF resources? Upload them the same way into the <b>covers</b> or <b>resources</b> folder first. Full click-by-click instructions are in your Setup Guide.</p>
+    <br>
+    <button class="btn btn-gold" onclick="downloadData()">Download updated data.js</button>
+  </div>
+</div>
+
+<script src="data/data.js"></script>
+<script>
+var D = window.SITE_DATA;
+var editingIndex = null;
+
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+
+function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,40)||'book';}
+
+function renderBookList(){
+  document.getElementById('book-list').innerHTML = D.books.map(function(b,i){
+    return '<button onclick="editBook('+i+')">'+esc(b.title)+
+      '<span class="pill">'+(b.status==='available'?'Available':'Coming soon')+'</span>'+
+      '<span class="pill">'+((b.buyLinks||[]).filter(function(l){return l.url;}).length)+' link(s)</span></button>';
+  }).join('');
+}
+function renderResList(){
+  document.getElementById('res-list-admin').innerHTML = D.resources.map(function(r,i){
+    return '<button onclick="removeResource('+i+')" title="Click to remove">'+esc(r.title)+'<span class="pill">click to remove</span></button>';
+  }).join('') || '<p style="font-size:.88rem;color:var(--muted);">No resources yet.</p>';
+  var sel=document.getElementById('r-book');
+  sel.innerHTML='<option value="">— none —</option>'+D.books.map(function(b){return '<option value="'+esc(b.id)+'">'+esc(b.title)+'</option>';}).join('');
+}
+function renderResourceTicks(book){
+  document.getElementById('f-resources').innerHTML = D.resources.length ? D.resources.map(function(r){
+    var checked = book && (book.relatedResources||[]).indexOf(r.id)>-1 ? ' checked' : '';
+    return '<label style="text-transform:none;font-weight:normal;display:block;margin:4px 0;"><input type="checkbox" class="res-tick" value="'+esc(r.id)+'"'+checked+'> '+esc(r.title)+'</label>';
+  }).join('') : '<span style="color:var(--muted);">No resources exist yet — add them in section 2 first.</span>';
+}
+function addLinkRow(store,url){
+  var d=document.createElement('div'); d.className='link-row';
+  d.innerHTML='<input type="text" class="l-store" placeholder="Store name (e.g., Amazon)" value="'+esc(store)+'">'+
+    '<input type="url" class="l-url" placeholder="https://... full link to the book" value="'+esc(url)+'">'+
+    '<button class="btn btn-sm" style="border:1px solid #b33;color:#b33;background:none;" onclick="this.parentNode.remove()">remove</button>';
+  document.getElementById('f-links').appendChild(d);
+}
+function editBook(i){
+  editingIndex=i; var b=D.books[i];
+  document.getElementById('book-editor').style.display='block';
+  document.getElementById('editor-title').textContent='Edit: '+b.title;
+  document.getElementById('f-title').value=b.title||'';
+  document.getElementById('f-subtitle').value=b.subtitle||'';
+  document.getElementById('f-series').value=b.series||'The HR Mastery Series';
+  document.getElementById('f-status').value=b.status||'coming-soon';
+  document.getElementById('f-cover').value=b.cover||'';
+  document.getElementById('f-desc').value=b.description||'';
+  document.getElementById('f-highlights').value=(b.highlights||[]).join('\n');
+  document.getElementById('f-links').innerHTML='';
+  (b.buyLinks&&b.buyLinks.length?b.buyLinks:[{store:'Amazon',url:''},{store:'Pothi',url:''}]).forEach(function(l){addLinkRow(l.store,l.url);});
+  document.getElementById('f-sample').value='';
+  renderResourceTicks(b);
+  document.getElementById('save-msg').textContent='';
+  document.getElementById('book-editor').scrollIntoView({behavior:'smooth'});
+}
+function newBook(){
+  editingIndex=null;
+  document.getElementById('book-editor').style.display='block';
+  document.getElementById('editor-title').textContent='Add a New Book';
+  ['f-title','f-subtitle','f-cover','f-desc','f-highlights','f-sample'].forEach(function(id){document.getElementById(id).value='';});
+  document.getElementById('f-series').value='The HR Mastery Series';
+  document.getElementById('f-status').value='coming-soon';
+  document.getElementById('f-links').innerHTML='';
+  addLinkRow('Amazon',''); addLinkRow('Pothi','');
+  renderResourceTicks(null);
+  document.getElementById('save-msg').textContent='';
+  document.getElementById('book-editor').scrollIntoView({behavior:'smooth'});
+}
+function saveBook(){
+  var title=document.getElementById('f-title').value.trim();
+  if(!title){alert('Please enter the book name.');return;}
+  var links=[];
+  document.querySelectorAll('#f-links .link-row').forEach(function(row){
+    var s=row.querySelector('.l-store').value.trim(), u=row.querySelector('.l-url').value.trim();
+    if(s&&u) links.push({store:s,url:u});
+  });
+  var ticks=[]; document.querySelectorAll('.res-tick:checked').forEach(function(c){ticks.push(c.value);});
+  var sampleText=document.getElementById('f-sample').value.trim();
+  var b = editingIndex!==null ? D.books[editingIndex] : {id:slug(title), buyLinks:[]};
+  b.title=title;
+  b.subtitle=document.getElementById('f-subtitle').value.trim();
+  b.series=document.getElementById('f-series').value.trim()||'The HR Mastery Series';
+  b.status=document.getElementById('f-status').value;
+  b.cover=document.getElementById('f-cover').value.trim()||b.cover||'covers/people-architect.svg';
+  b.description=document.getElementById('f-desc').value.trim();
+  b.highlights=document.getElementById('f-highlights').value.split('\n').map(function(x){return x.trim();}).filter(Boolean);
+  b.buyLinks=links;
+  b.relatedResources=ticks;
+  if(links.length && b.status==='coming-soon') b.status='available';
+  if(sampleText){
+    b.sampleParas=sampleText.split(/\n\s*\n/).map(function(x){return x.replace(/\s+/g,' ').trim();}).filter(Boolean);
+    if(editingIndex!==null) delete b.sampleId; // new pasted sample replaces the built-in one
+  }
+  if(editingIndex===null) D.books.push(b);
+  renderBookList();
+  document.getElementById('save-msg').textContent='Saved ✓ — now go to section 3 to publish.';
+}
+function deleteBook(){
+  if(editingIndex===null){document.getElementById('book-editor').style.display='none';return;}
+  if(!confirm('Remove this book from the website? (The manuscript on your computer is not affected.)'))return;
+  D.books.splice(editingIndex,1); editingIndex=null;
+  document.getElementById('book-editor').style.display='none';
+  renderBookList();
+}
+function addResource(){
+  var t=document.getElementById('r-title').value.trim();
+  var f=document.getElementById('r-file').value.trim();
+  if(!t||!f){alert('Please fill in the resource title and the file name / link.');return;}
+  var r={id:slug(t),title:t,description:document.getElementById('r-desc').value.trim(),
+    type:document.getElementById('r-type').value.trim()||'Download',relatedBook:document.getElementById('r-book').value||undefined};
+  if(/^https?:\/\//i.test(f)) r.url=f; else r.file=f;
+  D.resources.push(r);
+  ['r-title','r-desc','r-file'].forEach(function(id){document.getElementById(id).value='';});
+  renderResList(); renderResourceTicks(editingIndex!==null?D.books[editingIndex]:null);
+  document.getElementById('res-msg').textContent='Added ✓';
+  setTimeout(function(){document.getElementById('res-msg').textContent='';},3000);
+}
+function removeResource(i){
+  if(!confirm('Remove "'+D.resources[i].title+'" from the website?'))return;
+  var id=D.resources[i].id;
+  D.resources.splice(i,1);
+  D.books.forEach(function(b){ if(b.relatedResources) b.relatedResources=b.relatedResources.filter(function(x){return x!==id;}); });
+  renderResList();
+}
+function downloadData(){
+  var header='// ============================================================\n'+
+  '// HR MASTERY SERIES — SITE DATA (generated by admin page '+new Date().toISOString().slice(0,10)+')\n'+
+  '// Upload this file into the data folder on GitHub to publish.\n'+
+  '// ============================================================\n';
+  var blob=new Blob([header+'window.SITE_DATA = '+JSON.stringify(D,null,2)+';\n'],{type:'text/javascript'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob); a.download='data.js'; a.click();
+}
+document.getElementById('site-header').innerHTML='<div class="nav-wrap"><a class="brand" href="index.html"><div class="b1">THE <em>HR MASTERY</em> SERIES</div><div class="b2">Private admin page</div></a><nav class="main"><a href="index.html">&larr; Back to website</a></nav></div>';
+renderBookList(); renderResList(); renderResourceTicks(null);
+</script>
+</body>
+</html>
