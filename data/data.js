@@ -5,168 +5,243 @@
 // or by asking Claude. Do not edit by hand unless comfortable.
 // ============================================================
 window.SITE_DATA = {
-  "site": {
-    "name": "The HR Mastery Series",
-    "tagline": "Practitioner-first books for HR leaders who build, not just administer.",
-    "author": "Mayur N Koikar"
+ "site": {
+  "name": "The HR Mastery Series",
+  "tagline": "Practitioner-first books for HR leaders who build, not just administer.",
+  "author": "Mayur N Koikar"
+ },
+ "books": [
+  {
+   "id": "business-centric-hr",
+   "title": "Business-Centric HR",
+   "subtitle": "The Complete Operating System for HR Leaders Who Think Like CEOs",
+   "series": "The HR Mastery Series — Book 1",
+   "status": "available",
+   "cover": "covers/business-centric-hr.png",
+   "description": "Business-Centric HR is the complete operating system for HR leaders who want to think, speak, and lead like business people — not administrators. Anchored by five Hero Frameworks, it moves HR from the most powerful function nobody believes in to a revenue-driving, risk-managing capability at the centre of the business.",
+   "highlights": [
+    "Five Hero Frameworks: the HR Influence Spectrum, HR P&L, BCHR Wheel, Talent Value Chain, and 12-Month Transformation Roadmap",
+    "Learn to read any business in 90 days and speak the language of the CFO",
+    "Every chapter ends with three Board Questions and a 90-day action plan"
+   ],
+   "buyLinks": [
+    {
+     "store": "Amazon",
+     "url": "https://www.amazon.com/s?k=Mayur+N+Koikar+Business-Centric+HR"
+    }
+   ],
+   "sampleId": "business-centric-hr",
+   "relatedResources": []
   },
-  "books": [
+  {
+   "id": "ai-ready-hr",
+   "title": "AI-Ready HR",
+   "subtitle": "The CHRO's Complete Guide to Leading the Artificial Intelligence Revolution",
+   "series": "The HR Mastery Series — Book 2",
+   "status": "available",
+   "cover": "covers/ai-ready-hr.png",
+   "description": "AI is not coming to the world of work — it is already here. AI-Ready HR is the CHRO's guide to shaping that change: what AI actually is (and is not) for HR, how to audit your readiness, redesign processes for AI augmentation, and govern data, privacy, and ethics — then apply AI across the entire talent lifecycle.",
+   "highlights": [
+    "The AIHR Diagnostic to audit your function's AI readiness",
+    "The HR AI Governance Framework for data, privacy, and ethics",
+    "AI applied across the full talent lifecycle, with role-specific checklists"
+   ],
+   "buyLinks": [
     {
-      "id": "people-architect",
-      "title": "The People Architect",
-      "subtitle": "The Complete CHRO Playbook: From HR Leader to Business Architect",
-      "series": "The HR Mastery Series",
-      "status": "coming-soon",
-      "cover": "covers/people-architect.svg",
-      "description": "Every major business failure — cultural collapse, leadership crisis, talent exodus — is a people-system failure. This book is not about HR as it is; it is about HR as it must be. Built around the Enterprise People System philosophy and twelve original frameworks, it takes you from HR leader to business architect.",
-      "highlights": [
-        "Twelve original frameworks built from 25+ years of practice",
-        "Six-part structure — each part readable independently",
-        "For CHROs, aspiring CHROs, and business leaders who own people outcomes"
-      ],
-      "buyLinks": [],
-      "sampleId": "people-architect",
-      "relatedResources": ["eps-manifesto"]
-    },
-    {
-      "id": "tem",
-      "title": "The Enterprise Mind",
-      "subtitle": "The Complete Operating System for the World-Class CHRO",
-      "series": "The HR Mastery Series",
-      "status": "coming-soon",
-      "cover": "covers/tem.svg",
-      "description": "The organizations of the next decade will be won and lost on their people systems — and the CHRO is the executive who operates them. This book is the operating system for that CHRO: proprietary frameworks earned from experience, not recycled theory. The world-class CHRO does not need more frameworks. They need better thinking.",
-      "highlights": [
-        "A complete operating philosophy for the enterprise CHRO",
-        "Proprietary frameworks developed across a 25-year career",
-        "Written for CHROs held accountable by boards, not just HR teams"
-      ],
-      "buyLinks": [],
-      "sampleId": "tem",
-      "relatedResources": ["eps-manifesto"]
-    },
-    {
-      "id": "pay-with-purpose",
-      "title": "Pay With Purpose",
-      "subtitle": "The Koikar Total Rewards Framework",
-      "series": "The HR Mastery Series",
-      "status": "coming-soon",
-      "cover": "covers/pay-with-purpose.svg",
-      "description": "Compensation is the most consequential HR program an organization runs — and in most organizations it is managed inconsistently and communicated poorly. This practitioner's guide teaches both sides of the craft: the Rewards Specialist's analytical rigor and the HR Head's business judgment, following one company's journey from a broken pay system to a trusted one.",
-      "highlights": [
-        "The Pay With Purpose™ operating system for total rewards",
-        "Dual perspective in every chapter: Rewards Specialist and HR Head",
-        "The NovaTech case thread — one company, transformed chapter by chapter"
-      ],
-      "buyLinks": [],
-      "sampleId": "pay-with-purpose",
-      "relatedResources": []
-    },
-    {
-      "id": "er-playbook",
-      "title": "The Employee Relations Playbook",
-      "subtitle": "The Complete Practitioner's Guide to Every ER Process, Case, and Challenge",
-      "series": "The HR Mastery Series — Book Three",
-      "status": "coming-soon",
-      "cover": "covers/er-playbook.svg",
-      "description": "Employee relations is where HR's credibility is won or lost — in the investigation handled well, the grievance resolved fairly, the difficult conversation done right. This playbook covers every ER process, case type, and challenge a practitioner will face, with step-by-step guidance drawn from decades of real cases.",
-      "highlights": [
-        "Complete coverage: investigations, grievances, discipline, and more",
-        "Process maps and checklists for every ER scenario",
-        "Written for the practitioner in the room, not the theorist"
-      ],
-      "buyLinks": [],
-      "sampleId": "er-playbook",
-      "relatedResources": []
-    },
-    {
-      "id": "strategic-hr",
-      "title": "101 Strategic HR Frameworks, Theories, and Tools",
-      "subtitle": "An Executive Guide for the Top 1% HR Professional",
-      "series": "The HR Mastery Series",
-      "status": "coming-soon",
-      "cover": "covers/strategic-hr.svg",
-      "description": "The definitive executive reference: 101 frameworks, theories, and tools that separate strategic HR leaders from administrators. Each framework moves beyond basic theory to strategic application — how the top 1% of HR professionals actually use these tools to drive business outcomes.",
-      "highlights": [
-        "101 frameworks in one executive reference",
-        "Strategic application, not textbook summaries",
-        "Designed for quick lookup or cover-to-cover study"
-      ],
-      "buyLinks": [],
-      "sampleId": "strategic-hr",
-      "relatedResources": []
-    },
-    {
-      "id": "ma-kill-zone",
-      "title": "The M&A Talent Kill Zone",
-      "subtitle": "The HR Playbook for Protecting Value from Due Diligence to Day 100",
-      "series": "The HR Mastery Series",
-      "status": "coming-soon",
-      "cover": "covers/ma-kill-zone.svg",
-      "description": "\"HR is a Day 2 problem\" is the most expensive lie in M&A — a lie that has destroyed billions in shareholder value. This playbook arms HR leaders with the DEAL SHIELD™ framework and the VALUE FIREWALL™ to protect deal value from due diligence through Day 100, when talent walks out the door and synergy models collapse.",
-      "highlights": [
-        "The DEAL SHIELD™ methodology for HR-led deal protection",
-        "The VALUE FIREWALL™ — nine categories of deal value HR must defend",
-        "Real deal failures analyzed: what went wrong and what would have saved them"
-      ],
-      "buyLinks": [],
-      "sampleId": "ma-kill-zone",
-      "relatedResources": []
-    },
-    {
-      "id": "field-manual-1",
-      "title": "The HR Leader's Field Manual — Volume 1: People & Teams",
-      "subtitle": "75 Strategic Frameworks for Every HR Decision, Conversation, and Business Challenge",
-      "series": "The HR Mastery Series",
-      "status": "coming-soon",
-      "cover": "covers/field-manual-1.svg",
-      "description": "The foundational HR capability in one volume: the science of human behavior, the art of talent assessment, the architecture of high-performing teams, leadership research, learning and development methodology, and organization design principles. Sections A through F — the first half of the 75-framework toolkit of the top 1% of HR leaders.",
-      "highlights": [
-        "Sections A–F: Understanding People through Organisation Design",
-        "Every framework cross-referenced to related chapters",
-        "Read as a curriculum or use as a diagnostic reference"
-      ],
-      "buyLinks": [],
-      "sampleId": "field-manual-1",
-      "relatedResources": []
-    },
-    {
-      "id": "field-manual-2",
-      "title": "The HR Leader's Field Manual — Volume 2: Strategy & Systems",
-      "subtitle": "75 Strategic Frameworks for Every HR Decision, Conversation, and Business Challenge",
-      "series": "The HR Mastery Series",
-      "status": "coming-soon",
-      "cover": "covers/field-manual-2.svg",
-      "description": "Volume 2 builds the strategic systems that turn HR capability into organizational advantage: HR strategy models, talent management frameworks, culture and change models, employee relations frameworks, reward architectures, and future-of-work frameworks. Sections G through L complete the 75-framework toolkit.",
-      "highlights": [
-        "Sections G–L: HR Strategy through Future of Work",
-        "The strategic-systems half of the two-volume set",
-        "Reference work: sequential curriculum or section-by-section toolkit"
-      ],
-      "buyLinks": [],
-      "sampleId": "field-manual-2",
-      "relatedResources": []
+     "store": "Amazon",
+     "url": "https://www.amazon.com/s?k=Mayur+N+Koikar+AI-Ready+HR"
     }
-  ],
-  "resources": [
+   ],
+   "sampleId": "ai-ready-hr",
+   "relatedResources": []
+  },
+  {
+   "id": "the-chro-playbook",
+   "title": "The CHRO Playbook",
+   "subtitle": "The Complete Guide to Leading at the C-Suite Level",
+   "series": "The HR Mastery Series — Book 3",
+   "status": "available",
+   "cover": "covers/the-chro-playbook.png",
+   "description": "The CHRO Playbook is the complete guide to leading HR at the C-suite level: what boards and CEOs actually expect, how to establish credibility in your first 100 days, and how to build the CEO-CHRO partnership — through strategy, talent, culture, total rewards, and high-stakes moments like M&A, restructuring, and crisis.",
+   "highlights": [
+    "What boards and CEOs actually expect from the CHRO",
+    "A first-100-days plan to establish C-suite credibility",
+    "Playbooks for M&A, restructuring, crisis, and the CEO-CHRO partnership"
+   ],
+   "buyLinks": [
     {
-      "id": "eps-manifesto",
-      "title": "The Enterprise People System — A Unified Operating Philosophy",
-      "description": "The philosophical spine of The People Architect, free to download. The founding distinction — people as a living system, not a resource — and the pillars of the Enterprise People System.",
-      "type": "PDF download",
-      "file": "resources/The_Enterprise_People_System_Manifesto.pdf",
-      "relatedBook": "people-architect"
+     "store": "Amazon",
+     "url": "https://www.amazon.com/s?k=Mayur+N+Koikar+The+CHRO+Playbook"
     }
-  ],
-  "about": {
-    "headline": "About the Author",
-    "name": "Mayur N Koikar",
-    "role": "Chief Human Resources Officer",
-    "bio": [
-      "Mayur N Koikar has spent more than 25 years in human resources, rising to Chief Human Resources Officer and working across the full spectrum of the profession — talent, rewards, employee relations, organization design, and the boardroom conversations where people strategy meets business strategy.",
-      "He writes as a practitioner, not a theorist. Every framework in The HR Mastery Series was built from real decisions, real cases, and real consequences — the kind you only accumulate by sitting in the chair. His books are written for the HR professional who wants to be taken seriously as a business leader: direct, practical, and free of jargon.",
-      "The HR Mastery Series is his life's work in book form — a complete library for HR professionals at every stage, from first framework to the CHRO seat."
-    ],
-    "email": "mayurkoikar@gmail.com"
+   ],
+   "sampleId": "the-chro-playbook",
+   "relatedResources": []
+  },
+  {
+   "id": "hr-from-scratch",
+   "title": "HR From Scratch",
+   "subtitle": "The Complete Guide to Building People Operations in Startups and Scale-Ups",
+   "series": "The HR Mastery Series — Book 4",
+   "status": "available",
+   "cover": "covers/hr-from-scratch.png",
+   "description": "Written for founders and first HR hires who walk in with no policies, no processes, and no roadmap, HR From Scratch is the complete guide to building people operations in startups and scale-ups — from the HR audit and priority map through policies, compensation, and a hiring engine, all the way to scaling from 20 to 500 people.",
+   "highlights": [
+    "Build people operations from zero: policies, compliance, comp, and hiring",
+    "What the first HR hire really does — and where to start",
+    "Scaling playbooks for 20, 100, and 500 people"
+   ],
+   "buyLinks": [
+    {
+     "store": "Amazon",
+     "url": "https://www.amazon.com/s?k=Mayur+N+Koikar+HR+From+Scratch"
+    }
+   ],
+   "sampleId": "hr-from-scratch",
+   "relatedResources": []
+  },
+  {
+   "id": "the-learning-organization",
+   "title": "The Learning Organization",
+   "subtitle": "A Practical Guide to Building L&D That Actually Changes Behavior",
+   "series": "The HR Mastery Series — Book 5",
+   "status": "available",
+   "cover": "covers/the-learning-organization.png",
+   "description": "Most training doesn't work — and The Learning Organization is a practical guide to fixing that. Grounded in the science of how people learn, it takes L&D from a training department to a genuine learning organization: strategy tied to business outcomes, real needs analysis, and formal, informal, and social learning that sticks.",
+   "highlights": [
+    "Grounded in the science of how people actually learn",
+    "Connect L&D to business outcomes with real needs analysis",
+    "Instructional design, digital learning, and leadership development that sticks"
+   ],
+   "buyLinks": [
+    {
+     "store": "Amazon",
+     "url": "https://www.amazon.com/s?k=Mayur+N+Koikar+The+Learning+Organization"
+    }
+   ],
+   "sampleId": "the-learning-organization",
+   "relatedResources": []
+  },
+  {
+   "id": "performance-reimagined",
+   "title": "Performance Reimagined",
+   "subtitle": "The Complete Guide to Redesigning Performance Management for a World That Demands Continuous Growth",
+   "series": "The HR Mastery Series — Book 6",
+   "status": "available",
+   "cover": "covers/performance-reimagined.png",
+   "description": "The annual review is one of the most costly and least effective management practices in existence. Performance Reimagined diagnoses why performance management is broken and rebuilds it around The PACE System — Purpose, Alignment, Conversation, and Evaluation — with fair ratings, real calibration, and a humane approach to underperformance.",
+   "highlights": [
+    "The PACE System: Purpose, Alignment, Conversation, Evaluation",
+    "Fix ratings and calibration to be genuinely fair",
+    "Handle underperformance without losing your soul"
+   ],
+   "buyLinks": [
+    {
+     "store": "Amazon",
+     "url": "https://www.amazon.com/s?k=Mayur+N+Koikar+Performance+Reimagined"
+    }
+   ],
+   "sampleId": "performance-reimagined",
+   "relatedResources": []
+  },
+  {
+   "id": "the-total-rewards-playbook",
+   "title": "The Total Rewards Playbook",
+   "subtitle": "Designing Compensation, Benefits, and Recognition Systems That Attract, Motivate, and Retain Your Best People",
+   "series": "The HR Mastery Series — Book 7",
+   "status": "available",
+   "cover": "covers/the-total-rewards-playbook.png",
+   "description": "How an organization rewards its people is how it communicates what it truly values. The Total Rewards Playbook is a complete framework — The REWARD Architecture — for designing compensation, benefits, and recognition that attract, motivate, and retain your best people, aligned end-to-end with business strategy.",
+   "highlights": [
+    "The REWARD Architecture — a complete total rewards framework",
+    "Base pay, incentives, equity, wellbeing, and recognition",
+    "Align the whole reward system with business strategy"
+   ],
+   "buyLinks": [
+    {
+     "store": "Amazon",
+     "url": "https://www.amazon.com/s?k=Mayur+N+Koikar+The+Total+Rewards+Playbook"
+    }
+   ],
+   "sampleId": "the-total-rewards-playbook",
+   "relatedResources": []
+  },
+  {
+   "id": "hr-for-every-manager",
+   "title": "HR for Every Manager",
+   "subtitle": "The Complete People Management Playbook for Line Managers, Team Leaders, and Business Leaders with People Responsibility",
+   "series": "The HR Mastery Series — Book 8",
+   "status": "available",
+   "cover": "covers/hr-for-every-manager.png",
+   "description": "People don't leave companies — they leave managers. HR for Every Manager is the complete people-management playbook, built around The MANAGE Model: the manager's real role, what motivates people, and the full arc of leading a team — hiring, onboarding, feedback, coaching, recognition, inclusion, and difficult conversations.",
+   "highlights": [
+    "The MANAGE Model — a complete people-management framework",
+    "Hiring, onboarding, feedback, coaching, and recognition",
+    "Navigate underperformance and difficult conversations with humanity"
+   ],
+   "buyLinks": [
+    {
+     "store": "Amazon",
+     "url": "https://www.amazon.com/s?k=Mayur+N+Koikar+HR+for+Every+Manager"
+    }
+   ],
+   "sampleId": "hr-for-every-manager",
+   "relatedResources": []
+  },
+  {
+   "id": "the-hr-business-partners-handbook",
+   "title": "The HR Business Partner's Handbook",
+   "subtitle": "Mastering Strategic Partnership, Business Acumen, and Value Creation Through the PARTNER Framework",
+   "series": "The HR Mastery Series — Book 9",
+   "status": "available",
+   "cover": "covers/the-hr-business-partners-handbook.png",
+   "description": "The best HR Business Partners don't ask 'How can HR help?' — they ask 'What is stopping this business from winning?' This handbook is the complete guide to mastering strategic partnership, business acumen, and value creation through The PARTNER Framework, moving the HRBP from a support function to a business-first leader who owns outcomes.",
+   "highlights": [
+    "The PARTNER Framework: Position, Analyze, Relate, Transform, Navigate, Enable, Results",
+    "Move from a support function to a business-first leader",
+    "Business acumen, power relationships, and owning outcomes"
+   ],
+   "buyLinks": [
+    {
+     "store": "Amazon",
+     "url": "https://www.amazon.com/s?k=Mayur+N+Koikar+HR+Business+Partners+Handbook"
+    }
+   ],
+   "sampleId": "the-hr-business-partners-handbook",
+   "relatedResources": []
+  },
+  {
+   "id": "talent-acquisition-mastery",
+   "title": "Talent Acquisition Mastery",
+   "subtitle": "The Complete Strategic Guide to Hiring for Competitive Advantage Through the HIRE System",
+   "series": "The HR Mastery Series — Book 10",
+   "status": "available",
+   "cover": "covers/talent-acquisition-mastery.png",
+   "description": "Hiring is the most consequential investment an organization makes, yet most organizations hire badly — and pay for it. Talent Acquisition Mastery is the complete strategic guide to hiring for competitive advantage through The HIRE System — Hunt, Identify, Recruit, Embed — turning talent acquisition into a genuine competitive weapon.",
+   "highlights": [
+    "The HIRE System: Hunt, Identify, Recruit, Embed",
+    "Workforce planning, employer brand, and sourcing architecture",
+    "Structured and AI-powered assessment, offer design, and closing"
+   ],
+   "buyLinks": [
+    {
+     "store": "Amazon",
+     "url": "https://www.amazon.com/s?k=Mayur+N+Koikar+Talent+Acquisition+Mastery"
+    }
+   ],
+   "sampleId": "talent-acquisition-mastery",
+   "relatedResources": []
   }
+ ],
+ "resources": [],
+ "about": {
+  "headline": "About the Author",
+  "name": "Mayur N Koikar",
+  "role": "Chief Human Resources Officer",
+  "bio": [
+   "Mayur N Koikar has spent more than 25 years in human resources, rising to Chief Human Resources Officer and working across the full spectrum of the profession — talent, rewards, employee relations, organization design, and the boardroom conversations where people strategy meets business strategy.",
+   "He writes as a practitioner, not a theorist. Every framework in The HR Mastery Series was built from real decisions, real cases, and real consequences — the kind you only accumulate by sitting in the chair. His books are written for the HR professional who wants to be taken seriously as a business leader: direct, practical, and free of jargon.",
+   "The HR Mastery Series is his life's work in book form — a complete library for HR professionals at every stage, from first framework to the CHRO seat."
+  ],
+  "email": "mayurkoikar@gmail.com"
+ }
 };
