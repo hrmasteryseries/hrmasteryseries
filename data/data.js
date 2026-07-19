@@ -31,7 +31,9 @@ window.SITE_DATA = {
     }
    ],
    "sampleId": "business-centric-hr",
-   "relatedResources": []
+   "relatedResources": [
+    "business-centric-hr-sample"
+   ]
   },
   {
    "id": "ai-ready-hr",
@@ -53,7 +55,9 @@ window.SITE_DATA = {
     }
    ],
    "sampleId": "ai-ready-hr",
-   "relatedResources": []
+   "relatedResources": [
+    "ai-ready-hr-sample"
+   ]
   },
   {
    "id": "the-chro-playbook",
@@ -75,7 +79,9 @@ window.SITE_DATA = {
     }
    ],
    "sampleId": "the-chro-playbook",
-   "relatedResources": []
+   "relatedResources": [
+    "the-chro-playbook-sample"
+   ]
   },
   {
    "id": "hr-from-scratch",
@@ -97,7 +103,9 @@ window.SITE_DATA = {
     }
    ],
    "sampleId": "hr-from-scratch",
-   "relatedResources": []
+   "relatedResources": [
+    "hr-from-scratch-sample"
+   ]
   },
   {
    "id": "the-learning-organization",
@@ -119,7 +127,9 @@ window.SITE_DATA = {
     }
    ],
    "sampleId": "the-learning-organization",
-   "relatedResources": []
+   "relatedResources": [
+    "the-learning-organization-sample"
+   ]
   },
   {
    "id": "performance-reimagined",
@@ -141,7 +151,9 @@ window.SITE_DATA = {
     }
    ],
    "sampleId": "performance-reimagined",
-   "relatedResources": []
+   "relatedResources": [
+    "performance-reimagined-sample"
+   ]
   },
   {
    "id": "the-total-rewards-playbook",
@@ -163,7 +175,9 @@ window.SITE_DATA = {
     }
    ],
    "sampleId": "the-total-rewards-playbook",
-   "relatedResources": []
+   "relatedResources": [
+    "the-total-rewards-playbook-sample"
+   ]
   },
   {
    "id": "hr-for-every-manager",
@@ -185,7 +199,9 @@ window.SITE_DATA = {
     }
    ],
    "sampleId": "hr-for-every-manager",
-   "relatedResources": []
+   "relatedResources": [
+    "hr-for-every-manager-sample"
+   ]
   },
   {
    "id": "the-hr-business-partners-handbook",
@@ -207,7 +223,9 @@ window.SITE_DATA = {
     }
    ],
    "sampleId": "the-hr-business-partners-handbook",
-   "relatedResources": []
+   "relatedResources": [
+    "the-hr-business-partners-handbook-sample"
+   ]
   },
   {
    "id": "talent-acquisition-mastery",
@@ -229,19 +247,102 @@ window.SITE_DATA = {
     }
    ],
    "sampleId": "talent-acquisition-mastery",
-   "relatedResources": []
+   "relatedResources": [
+    "talent-acquisition-mastery-sample"
+   ]
   }
  ],
- "resources": [],
+ "resources": [
+  {
+   "id": "business-centric-hr-sample",
+   "title": "Business-Centric HR — Free Sample Chapter",
+   "description": "Read the opening of Business-Centric HR free — download the sample chapter as a PDF, including the preface and first pages.",
+   "type": "PDF sample",
+   "file": "resources/business-centric-hr-sample.pdf",
+   "relatedBook": "business-centric-hr"
+  },
+  {
+   "id": "ai-ready-hr-sample",
+   "title": "AI-Ready HR — Free Sample Chapter",
+   "description": "Read the opening of AI-Ready HR free — download the sample chapter as a PDF, including the preface and first pages.",
+   "type": "PDF sample",
+   "file": "resources/ai-ready-hr-sample.pdf",
+   "relatedBook": "ai-ready-hr"
+  },
+  {
+   "id": "the-chro-playbook-sample",
+   "title": "The CHRO Playbook — Free Sample Chapter",
+   "description": "Read the opening of The CHRO Playbook free — download the sample chapter as a PDF, including the preface and first pages.",
+   "type": "PDF sample",
+   "file": "resources/the-chro-playbook-sample.pdf",
+   "relatedBook": "the-chro-playbook"
+  },
+  {
+   "id": "hr-from-scratch-sample",
+   "title": "HR From Scratch — Free Sample Chapter",
+   "description": "Read the opening of HR From Scratch free — download the sample chapter as a PDF, including the preface and first pages.",
+   "type": "PDF sample",
+   "file": "resources/hr-from-scratch-sample.pdf",
+   "relatedBook": "hr-from-scratch"
+  },
+  {
+   "id": "the-learning-organization-sample",
+   "title": "The Learning Organization — Free Sample Chapter",
+   "description": "Read the opening of The Learning Organization free — download the sample chapter as a PDF, including the preface and first pages.",
+   "type": "PDF sample",
+   "file": "resources/the-learning-organization-sample.pdf",
+   "relatedBook": "the-learning-organization"
+  },
+  {
+   "id": "performance-reimagined-sample",
+   "title": "Performance Reimagined — Free Sample Chapter",
+   "description": "Read the opening of Performance Reimagined free — download the sample chapter as a PDF, including the preface and first pages.",
+   "type": "PDF sample",
+   "file": "resources/performance-reimagined-sample.pdf",
+   "relatedBook": "performance-reimagined"
+  },
+  {
+   "id": "the-total-rewards-playbook-sample",
+   "title": "The Total Rewards Playbook — Free Sample Chapter",
+   "description": "Read the opening of The Total Rewards Playbook free — download the sample chapter as a PDF, including the preface and first pages.",
+   "type": "PDF sample",
+   "file": "resources/the-total-rewards-playbook-sample.pdf",
+   "relatedBook": "the-total-rewards-playbook"
+  },
+  {
+   "id": "hr-for-every-manager-sample",
+   "title": "HR for Every Manager — Free Sample Chapter",
+   "description": "Read the opening of HR for Every Manager free — download the sample chapter as a PDF, including the preface and first pages.",
+   "type": "PDF sample",
+   "file": "resources/hr-for-every-manager-sample.pdf",
+   "relatedBook": "hr-for-every-manager"
+  },
+  {
+   "id": "the-hr-business-partners-handbook-sample",
+   "title": "The HR Business Partner's Handbook — Free Sample Chapter",
+   "description": "Read the opening of The HR Business Partner's Handbook free — download the sample chapter as a PDF, including the preface and first pages.",
+   "type": "PDF sample",
+   "file": "resources/the-hr-business-partners-handbook-sample.pdf",
+   "relatedBook": "the-hr-business-partners-handbook"
+  },
+  {
+   "id": "talent-acquisition-mastery-sample",
+   "title": "Talent Acquisition Mastery — Free Sample Chapter",
+   "description": "Read the opening of Talent Acquisition Mastery free — download the sample chapter as a PDF, including the preface and first pages.",
+   "type": "PDF sample",
+   "file": "resources/talent-acquisition-mastery-sample.pdf",
+   "relatedBook": "talent-acquisition-mastery"
+  }
+ ],
  "about": {
   "headline": "About the Author",
   "name": "Mayur N Koikar",
-  "role": "Chief Human Resources Officer",
+  "role": "HR Practitioner & Author",
   "bio": [
-   "Mayur N Koikar has spent more than 25 years in human resources, rising to Chief Human Resources Officer and working across the full spectrum of the profession — talent, rewards, employee relations, organization design, and the boardroom conversations where people strategy meets business strategy.",
+   "Mayur N Koikar has spent more than 25 years in human resources, working across the full spectrum of the profession — talent, rewards, employee relations, organization design, and the boardroom conversations where people strategy meets business strategy.",
    "He writes as a practitioner, not a theorist. Every framework in The HR Mastery Series was built from real decisions, real cases, and real consequences — the kind you only accumulate by sitting in the chair. His books are written for the HR professional who wants to be taken seriously as a business leader: direct, practical, and free of jargon.",
    "The HR Mastery Series is his life's work in book form — a complete library for HR professionals at every stage, from first framework to the CHRO seat."
   ],
-  "email": "mayurkoikar@gmail.com"
+  "email": "mayur@hrmasteryseries.com"
  }
 };
